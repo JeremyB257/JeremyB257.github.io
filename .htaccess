@@ -39,7 +39,7 @@ ExpiresByType text/css "access plus 1 month"
 ExpiresByType application/pdf "access plus 1 month"
 ExpiresByType text/x-javascript "access plus 1 month"
 ExpiresByType application/x-shockwave-flash "access plus 1 year"
-ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType img/x-icon "access plus 1 year"
 ExpiresDefault "access plus 2 days"
 </IfModule>
 # END Expires Headers
