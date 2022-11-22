@@ -1,0 +1,23 @@
+{
+  "name": "tp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremyB257/tp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeremyB257/tp/issues"
+  },
+  "homepage": "https://github.com/JeremyB257/tp#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1",
+    "sass": "^1.54.0"
+  }
+}

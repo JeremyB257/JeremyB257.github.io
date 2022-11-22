@@ -1,0 +1,141 @@
+.banner {
+    background-color: $background-bloc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__heading {
+        font-size: 1.5em;
+        margin: 1.5em 0 0 0;
+    }
+    &__text {
+        color: #6e6e6e;
+        font-size: 1.1em;
+    }
+}
+
+.process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    counter-reset: list;
+    padding: 20px;
+   &-steps {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    @media screen and (max-width: 992px) {
+        flex-direction: column;
+    }
+   }
+    &-step {
+        display: flex;
+        align-items: center;
+        flex: 0%;
+        background-color: $background-bloc;
+        padding: 10px;
+        margin: 40px;
+        min-height: 80px;
+        border-radius: 20px;
+        @include bloc-shadow;
+        @media screen and (max-width: 992px) {
+            margin: 15px;
+        }
+        &::before {
+            content: counter(list) ;
+            counter-increment: list ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 25px;
+            color: white;
+            background-color: $primary-color;
+            border-radius: 25px;
+            position: relative;
+            left: -10px;
+        }
+        i {
+            padding: 0 0 0 20px;
+        }
+        &__text {
+            padding: 0 0 0 15px;
+            font-weight: bold;
+        }
+        &:hover {
+            background-color: darken($background-bloc, 10%);
+        }
+
+    }
+}
+
+.restaurants {
+    background-color: $background-bloc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 10px 50px 10px;
+    h1 {
+        align-self: center;
+    }
+}
+.restaurant {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.new-card {
+    
+    &::before {
+        content: "Nouveau";
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        padding: 7px;
+        border-radius: 3px;
+        background-color: $tertiary-color;
+        color: $new-tag-color;
+        font-weight: bold;
+        font-size: 0.9em;
+}
+}
+.restaurant-card {
+    position: relative;
+    flex: 32%;
+    min-width: 250px;
+    max-width: 500px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 15px;
+    @include bloc-shadow;
+    &__img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    }
+    &-desc {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__title {
+            margin: 0;
+            padding: 0;
+            order: 1;
+            flex: 90%;
+        }
+        &__text {
+            margin: 5px 0 0 0;
+            order: 3;
+        }
+        i {
+            order: 2;
+            font-size: 1.5em;
+        }
+    }
+    &:hover {
+        transform: scale(1.05);
+        transition: transform 300ms ease-in-out;
+    }
+}

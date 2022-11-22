@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 40px;
+      margin: 15px;
+    }
+    .return {
+        position: absolute;
+        left: 35px;
+        top: 25px;
+        font-size: 1.5em;
+    }
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background-color: #E6E6E7;
+    width: 100%;
+    &__text {
+        padding: 0 0 0 10px;
+        font-weight: bold;
+    }
+}

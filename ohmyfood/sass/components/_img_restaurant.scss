@@ -1,0 +1,42 @@
+.main {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    @media screen and(max-width: 992px) {
+        background-position: 0 0;
+    }
+}
+
+.la-palette-du-gout {
+    background-image: url("../img/restaurants/la-palette-du-gout.jpg");
+    background-position: 0 -200px;
+    
+}
+.la-note-enchantee {
+    background-image: url("../img/restaurants/la-note-enchantee.jpg");
+    background-position: 0 -500px;
+    
+}
+.le-delice-des-sens {
+    background-image: url("../img/restaurants/le-delice-des-sens.jpg");
+    background-position: 0 -240px;
+}
+.a-la-francaise {
+    background-image: url("../img/restaurants/a-la-francaise.jpg");
+    background-position: 0 -210px;
+}
+.main {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    @media screen and(max-width: 992px) {
+        background-position: 0 0;
+    }
+}
+.img-restaurant {
+        
+        width: 100%;
+        height: 400px;
+    @media screen and (max-width: 768px) {
+        height: 280px;
+    }
+    
+}
