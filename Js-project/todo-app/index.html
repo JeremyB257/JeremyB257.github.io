@@ -14,11 +14,14 @@
         <input class="input__text" type="text" required placeholder="Enter your todo" />
         <button class="input__btn"><i class="fa-solid fa-plus"></i></button>
       </form>
-      <!--  <form class="filter">
-                <input type="radio" name="input" id="all" checked><p>All</p>
-                <input type="radio" name="input" id="uncompleted"><p>Uncompleted</p>
-                <input type="radio" name="input" id="completed"><p>Completed</p>
-            </form> -->
+      <form class="filter">
+        <input type="radio" name="input" id="all" checked onclick="applyFilter('all')" />
+        <p>All</p>
+        <input type="radio" name="input" id="uncompleted" onclick="applyFilter('uncompleted')" />
+        <p>Uncompleted</p>
+        <input type="radio" name="input" id="completed" onclick="applyFilter('completed')" />
+        <p>Completed</p>
+      </form>
       <div class="todos"></div>
     </div>
   </body>
