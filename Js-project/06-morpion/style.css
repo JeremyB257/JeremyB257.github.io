@@ -23,6 +23,7 @@ td button {
   left: 5%;
   font-weight: bold;
   font-size: 50px;
+  border-width: 1px;
 }
 
 .message {
