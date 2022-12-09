@@ -21,7 +21,7 @@ p6.addEventListener('click', addPion);
 p7.addEventListener('click', addPion);
 p8.addEventListener('click', addPion);
 
-// algo
+// init
 let morpion = [
   ['_', '_', '_'],
   ['_', '_', '_'],
@@ -30,16 +30,20 @@ let morpion = [
 
 let turn = 0;
 message.innerHTML = "C'est au joueur 1 de jouer";
+
+// function
 function addPion(e) {
   this.removeEventListener('click', addPion);
   if (turn % 2 == 0) {
     turn++;
+
     message.innerHTML = "C'est au joueur 2 de jouer";
     e.target.innerHTML = 'X';
     if (e.target.value <= 2) morpion[0][e.target.value] = 'X';
     else if (e.target.value <= 5) morpion[1][e.target.value - 3] = 'X';
     else morpion[2][e.target.value - 6] = 'X';
-    searchWinner();
+
+    searchWinner('X');
   } else {
     turn++;
     message.innerHTML = "C'est au joueur 1 de jouer";
@@ -47,30 +51,72 @@ function addPion(e) {
     if (e.target.value <= 2) morpion[0][e.target.value] = 'O';
     else if (e.target.value <= 5) morpion[1][e.target.value - 3] = 'O';
     else morpion[2][e.target.value - 6] = 'O';
-    searchWinner();
+
+    searchWinner('O');
   }
 }
 
-function searchWinner() {
-  if (morpion[0][0] == 'X' && morpion[0][1] == 'X' && morpion[0][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[1][0] == 'X' && morpion[1][1] == 'X' && morpion[1][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[2][0] == 'X' && morpion[2][1] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+function searchWinner(figure) {
+  let winner = false;
+  if (morpion[0][0] == figure && morpion[0][1] == figure && morpion[0][2] == figure) {
+    winner = true;
+    p0.style.backgroundColor = 'lightgreen';
+    p1.style.backgroundColor = 'lightgreen';
+    p2.style.backgroundColor = 'lightgreen';
+  }
+  if (morpion[1][0] == figure && morpion[1][1] == figure && morpion[1][2] == figure) {
+    winner = true;
+    p3.style.backgroundColor = 'lightgreen';
+    p4.style.backgroundColor = 'lightgreen';
+    p5.style.backgroundColor = 'lightgreen';
+  }
+  if (morpion[2][0] == figure && morpion[2][1] == figure && morpion[2][2] == figure) {
+    winner = true;
+    p6.style.backgroundColor = 'lightgreen';
+    p7.style.backgroundColor = 'lightgreen';
+    p8.style.backgroundColor = 'lightgreen';
+  }
 
-  if (morpion[0][0] == 'X' && morpion[1][0] == 'X' && morpion[2][0] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[0][1] == 'X' && morpion[1][1] == 'X' && morpion[2][1] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[0][2] == 'X' && morpion[1][2] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+  if (morpion[0][0] == figure && morpion[1][0] == figure && morpion[2][0] == figure) {
+    winner = true;
+    p0.style.backgroundColor = 'lightgreen';
+    p3.style.backgroundColor = 'lightgreen';
+    p6.style.backgroundColor = 'lightgreen';
+  }
 
-  if (morpion[0][0] == 'X' && morpion[1][1] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[2][0] == 'X' && morpion[1][1] == 'X' && morpion[0][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+  if (morpion[0][1] == figure && morpion[1][1] == figure && morpion[2][1] == figure) {
+    winner = true;
+    p1.style.backgroundColor = 'lightgreen';
+    p4.style.backgroundColor = 'lightgreen';
+    p7.style.backgroundColor = 'lightgreen';
+  }
 
-  if (morpion[0][0] == 'O' && morpion[0][1] == 'O' && morpion[0][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[1][0] == 'O' && morpion[1][1] == 'O' && morpion[1][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[2][0] == 'O' && morpion[2][1] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[0][2] == figure && morpion[1][2] == figure && morpion[2][2] == figure) {
+    winner = true;
+    p2.style.backgroundColor = 'lightgreen';
+    p5.style.backgroundColor = 'lightgreen';
+    p8.style.backgroundColor = 'lightgreen';
+  }
 
-  if (morpion[0][0] == 'O' && morpion[1][0] == 'O' && morpion[2][0] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[0][1] == 'O' && morpion[1][1] == 'O' && morpion[2][1] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[0][2] == 'O' && morpion[1][2] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[0][0] == figure && morpion[1][1] == figure && morpion[2][2] == figure) {
+    winner = true;
+    p0.style.backgroundColor = 'lightgreen';
+    p4.style.backgroundColor = 'lightgreen';
+    p8.style.backgroundColor = 'lightgreen';
+  }
 
-  if (morpion[0][0] == 'O' && morpion[1][1] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[2][0] == 'O' && morpion[1][1] == 'O' && morpion[0][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[2][0] == figure && morpion[1][1] == figure && morpion[0][2] == figure) {
+    winner = true;
+    p6.style.backgroundColor = 'lightgreen';
+    p4.style.backgroundColor = 'lightgreen';
+    p2.style.backgroundColor = 'lightgreen';
+  }
+
+  if (winner) {
+    const buttons = document.getElementsByTagName('button');
+    for (const button of buttons) {
+      button.disabled = true;
+    }
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  }
 }
