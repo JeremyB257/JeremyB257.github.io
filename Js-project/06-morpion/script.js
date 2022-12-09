@@ -149,4 +149,5 @@ function reset() {
   p6.addEventListener('click', addPion);
   p7.addEventListener('click', addPion);
   p8.addEventListener('click', addPion);
+  resetBtn.style.display = 'none';
 }
