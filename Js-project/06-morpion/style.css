@@ -29,7 +29,3 @@ td button {
   font-weight: bold;
   font-size: 30px;
 }
-
-button:disabled {
-  color: black;
-}
