@@ -31,6 +31,7 @@ let morpion = [
 ];
 
 let turn = 0;
+let winner = false;
 message.innerHTML = "C'est au joueur 1 de jouer";
 
 // function
@@ -56,10 +57,17 @@ function addPion(e) {
 
     searchWinner('O');
   }
+
+  if (turn == 9 && winner == false) {
+    message.innerHTML = 'Match nul';
+    const buttons = document.getElementsByTagName('button');
+    for (const button of buttons) {
+      button.disabled = true;
+    }
+  }
 }
 
 function searchWinner(figure) {
-  var winner = false;
   if (morpion[0][0] == figure && morpion[0][1] == figure && morpion[0][2] == figure) {
     winner = true;
     p0.style.backgroundColor = 'lightgreen';
