@@ -29,3 +29,23 @@ td button {
   font-weight: bold;
   font-size: 30px;
 }
+
+.reset {
+  display: none;
+  color: #ffffff;
+  border-radius: 5px;
+  border: solid 1px #bf2719;
+  padding: 10px 18px;
+  text-shadow: 1px 1px 0px #810d05;
+  box-shadow: inset 1px 1px 2px 0px #f5978e;
+  cursor: pointer;
+  font-family: Arial;
+  background: linear-gradient(180deg, #f24437 10%, #c62d1f 100%);
+}
+
+.reset:hover {
+  background: linear-gradient(180deg, #c62d1f 10%, #f24437 100%);
+}
+.reset:active {
+  transform: scale(0.95);
+}
