@@ -1,26 +1,12 @@
 //selecteur
-const p0 = document.getElementById('p0');
-const p1 = document.getElementById('p1');
-const p2 = document.getElementById('p2');
-const p3 = document.getElementById('p3');
-const p4 = document.getElementById('p4');
-const p5 = document.getElementById('p5');
-const p6 = document.getElementById('p6');
-const p7 = document.getElementById('p7');
-const p8 = document.getElementById('p8');
+const buttons = document.getElementsByTagName('button');
 const message = document.querySelector('.message');
 const resetBtn = document.querySelector('.reset');
 
 //event
-p0.addEventListener('click', addPion);
-p1.addEventListener('click', addPion);
-p2.addEventListener('click', addPion);
-p3.addEventListener('click', addPion);
-p4.addEventListener('click', addPion);
-p5.addEventListener('click', addPion);
-p6.addEventListener('click', addPion);
-p7.addEventListener('click', addPion);
-p8.addEventListener('click', addPion);
+for (const button of buttons) {
+  button.addEventListener('click', addPion);
+}
 resetBtn.addEventListener('click', reset);
 
 // init
@@ -35,32 +21,32 @@ let winner = false;
 message.innerHTML = "C'est au joueur 1 de jouer";
 
 // function
-function addPion(e) {
+function addPion() {
   resetBtn.style.display = 'block';
   this.removeEventListener('click', addPion);
   if (turn % 2 == 0) {
     turn++;
     message.innerHTML = "C'est au joueur 2 de jouer";
-    e.target.innerHTML = 'X';
-    if (e.target.value <= 2) morpion[0][e.target.value] = 'X';
-    else if (e.target.value <= 5) morpion[1][e.target.value - 3] = 'X';
-    else morpion[2][e.target.value - 6] = 'X';
+    this.innerHTML = 'X';
+    if (this.dataset.cell <= 2) morpion[0][this.dataset.cell] = 'X';
+    else if (this.dataset.cell <= 5) morpion[1][this.dataset.cell - 3] = 'X';
+    else morpion[2][this.dataset.cell - 6] = 'X';
 
     searchWinner('X');
   } else {
     turn++;
     message.innerHTML = "C'est au joueur 1 de jouer";
-    e.target.innerHTML = 'O';
-    if (e.target.value <= 2) morpion[0][e.target.value] = 'O';
-    else if (e.target.value <= 5) morpion[1][e.target.value - 3] = 'O';
-    else morpion[2][e.target.value - 6] = 'O';
+    this.innerHTML = 'O';
+    if (this.dataset.cell <= 2) morpion[0][this.dataset.cell] = 'O';
+    else if (this.dataset.cell <= 5) morpion[1][this.dataset.cell - 3] = 'O';
+    else morpion[2][this.dataset.cell - 6] = 'O';
 
     searchWinner('O');
   }
 
   if (turn == 9 && winner == false) {
     message.innerHTML = 'Match nul';
-    const buttons = document.getElementsByTagName('button');
+
     for (const button of buttons) {
       button.disabled = true;
     }
@@ -123,7 +109,6 @@ function searchWinner(figure) {
   }
 
   if (winner) {
-    const buttons = document.getElementsByTagName('button');
     for (const button of buttons) {
       button.disabled = true;
     }
@@ -142,20 +127,13 @@ function reset() {
   winner = false;
   message.innerHTML = "C'est au joueur 1 de jouer";
   //reinit les bouttons
-  const buttons = document.getElementsByTagName('button');
+
   for (const button of buttons) {
     button.disabled = false;
     button.innerHTML = '';
-    button.style.backgroundColor = 'buttonface';
+    button.style.backgroundColor = 'transparent';
+    button.addEventListener('click', addPion);
   }
-  p0.addEventListener('click', addPion);
-  p1.addEventListener('click', addPion);
-  p2.addEventListener('click', addPion);
-  p3.addEventListener('click', addPion);
-  p4.addEventListener('click', addPion);
-  p5.addEventListener('click', addPion);
-  p6.addEventListener('click', addPion);
-  p7.addEventListener('click', addPion);
-  p8.addEventListener('click', addPion);
+
   resetBtn.style.display = 'none';
 }
