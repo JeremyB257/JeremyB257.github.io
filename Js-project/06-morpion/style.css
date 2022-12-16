@@ -2,9 +2,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(219, 217, 240);
 }
 * {
   box-sizing: border-box;
+}
+h1 {
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
 table {
   border-collapse: collapse;
@@ -12,7 +16,7 @@ table {
   height: 500px;
 }
 tbody {
-  border: 2px solid white;
+  border: 2px solid rgb(219, 217, 240);
 }
 td {
   border: 1px solid black;
