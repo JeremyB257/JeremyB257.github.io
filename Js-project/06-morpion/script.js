@@ -19,6 +19,7 @@ let morpion = [
 let turn = 0;
 let winner = false;
 message.innerHTML = "C'est au joueur 1 de jouer";
+message.style.color = '#bd0000';
 
 // function
 function addPion() {
@@ -27,7 +28,10 @@ function addPion() {
   if (turn % 2 == 0) {
     turn++;
     message.innerHTML = "C'est au joueur 2 de jouer";
+    message.style.color = '#3737ff';
     this.innerHTML = 'X';
+    this.style.color = '#bd0000';
+    this.style.transform = 'scale(0.8)';
     if (this.dataset.cell <= 2) morpion[0][this.dataset.cell] = 'X';
     else if (this.dataset.cell <= 5) morpion[1][this.dataset.cell - 3] = 'X';
     else morpion[2][this.dataset.cell - 6] = 'X';
@@ -36,7 +40,10 @@ function addPion() {
   } else {
     turn++;
     message.innerHTML = "C'est au joueur 1 de jouer";
+    message.style.color = '#bd0000';
     this.innerHTML = 'O';
+    this.style.color = '#3737ff';
+    this.style.transform = 'scale(0.8)';
     if (this.dataset.cell <= 2) morpion[0][this.dataset.cell] = 'O';
     else if (this.dataset.cell <= 5) morpion[1][this.dataset.cell - 3] = 'O';
     else morpion[2][this.dataset.cell - 6] = 'O';
@@ -46,6 +53,7 @@ function addPion() {
 
   if (turn == 9 && winner == false) {
     message.innerHTML = 'Match nul';
+    message.style.color = 'black';
 
     for (const button of buttons) {
       button.disabled = true;
@@ -111,8 +119,10 @@ function searchWinner(figure) {
   if (winner) {
     for (const button of buttons) {
       button.disabled = true;
+      button.style.opacity = '0.8';
     }
     message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+    message.style.color = figure == 'X' ? '#bd0000' : '#3737ff';
   }
 }
 
@@ -126,11 +136,17 @@ function reset() {
   turn = 0;
   winner = false;
   message.innerHTML = "C'est au joueur 1 de jouer";
+  message.style.color = '#bd0000';
   //reinit les bouttons
 
   for (const button of buttons) {
+    button.style.opacity = '1';
     button.disabled = false;
-    button.innerHTML = '';
+    button.style.transform = 'scale(0)';
+    setTimeout(() => {
+      button.innerHTML = '';
+      button.style.transform = 'scale(1)';
+    }, 500);
     button.style.backgroundColor = 'transparent';
     button.addEventListener('click', addPion);
   }
