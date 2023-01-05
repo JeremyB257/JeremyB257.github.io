@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/CMS/static/css/main.39d91f4b.css",
+    "main.js": "/CMS/static/js/main.6810e11d.js",
+    "index.html": "/CMS/index.html",
+    "static/media/chevron-down.svg": "/CMS/static/media/chevron-down.e64278b4c607aca5d1fa.svg",
+    "main.39d91f4b.css.map": "/CMS/static/css/main.39d91f4b.css.map",
+    "main.6810e11d.js.map": "/CMS/static/js/main.6810e11d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39d91f4b.css",
+    "static/js/main.6810e11d.js"
+  ]
+}
