@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/CMS/front/static/css/main.5db846a8.css",
-    "main.js": "/CMS/front/static/js/main.6810e11d.js",
-    "index.html": "/CMS/front/index.html",
-    "static/media/chevron-down.svg": "/CMS/front/static/media/chevron-down.e64278b4c607aca5d1fa.svg",
-    "main.5db846a8.css.map": "/CMS/front/static/css/main.5db846a8.css.map",
-    "main.6810e11d.js.map": "/CMS/front/static/js/main.6810e11d.js.map"
+    "main.css": "/CMS/front/build/static/css/main.bea8b94f.css",
+    "main.js": "/CMS/front/build/static/js/main.6810e11d.js",
+    "index.html": "/CMS/front/build/index.html",
+    "static/media/chevron-down.svg": "/CMS/front/build/static/media/chevron-down.e64278b4c607aca5d1fa.svg",
+    "main.bea8b94f.css.map": "/CMS/front/build/static/css/main.bea8b94f.css.map",
+    "main.6810e11d.js.map": "/CMS/front/build/static/js/main.6810e11d.js.map"
   },
   "entrypoints": [
-    "static/css/main.5db846a8.css",
+    "static/css/main.bea8b94f.css",
     "static/js/main.6810e11d.js"
   ]
 }
