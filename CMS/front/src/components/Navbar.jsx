@@ -30,10 +30,10 @@ const Navbar = (props) => {
         </li>
         <li className="nav-title">Theme</li>
         <li id="productMenu" className={props?.productMenu ? 'nav-group show' : 'nav-group'} onClick={showGroup}>
-          <a href="#" className="nav-link nav-group-toggle">
+          <div className="nav-link nav-group-toggle">
             <img className="nav-icon" src="img/ecommerce-price.svg" alt="produit" />
             &nbsp;Produits
-          </a>
+          </div>
           <ul className="nav-group-items">
             <li className="nav-item">
               <NavLink className="nav-link" to="/products">
