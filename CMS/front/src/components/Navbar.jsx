@@ -6,6 +6,18 @@ const Navbar = (props) => {
     e.target.parentNode.classList.toggle('show');
   };
 
+  if (window.innerWidth < 768) document.body.classList.add('hideSB');
+
+  window.addEventListener('resize', handleWindowResize);
+
+  function handleWindowResize() {
+    if (window.innerWidth < 768) {
+      document.body.classList.add('hideSB');
+    } else {
+      document.body.classList.remove('hideSB');
+    }
+  }
+
   return (
     <nav className="sidebar">
       <div className="sidebar-logo">CMS</div>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
   const darkMod = () => {
@@ -12,6 +11,15 @@ const Header = (props) => {
 
   const hideSideBar = () => {
     document.body.classList.toggle('hideSB');
+    if (window.innerWidth < 768) {
+      let backdrop = document.createElement('div');
+      backdrop.classList = 'sidebar-backdrop fade show';
+      document.body.appendChild(backdrop);
+      backdrop.addEventListener('click', () => {
+        backdrop.remove();
+        document.body.classList.add('hideSB');
+      });
+    }
   };
 
   return (

@@ -14,6 +14,9 @@ header {
   background: #fff;
   color: rgba(lighten($color-primary, 8%), 0.65);
   transition: background 0.35s, color 0.35s, margin-left 0.15s;
+  @media (max-width: 768px) {
+    margin-left: 0rem;
+  }
   i {
     font-size: 1.25rem;
     cursor: pointer;

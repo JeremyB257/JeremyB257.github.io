@@ -30,6 +30,9 @@ main {
     display: flex;
     justify-content: space-between;
   }
+  @media (max-width: 768px) {
+    margin-left: 0rem;
+  }
 }
 
 .hidden {
