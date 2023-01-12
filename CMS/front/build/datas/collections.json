@@ -3,21 +3,21 @@
     "_id": "107fb5b75607497b96722bda5b",
     "name": "Montres",
     "product": "3",
-    "imageUrl": "",
+    "imageUrl": "./img/defaultImg.svg",
     "altTxt": "Photo d'une montre"
   },
   {
     "_id": "107fb5b75607497b96722bda5c",
     "name": "Bracelets",
     "product": "2",
-    "imageUrl": "",
+    "imageUrl": "./img/defaultImg.svg",
     "altTxt": "Photo d'un bracelet"
   },
   {
     "_id": "107fb5b75607497b96722bda5d",
     "name": "Bagues",
     "product": "0",
-    "imageUrl": "",
+    "imageUrl": "./img/defaultImg.svg",
     "altTxt": "Photo d'une bague"
   }
 ]
