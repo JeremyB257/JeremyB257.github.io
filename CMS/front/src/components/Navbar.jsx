@@ -9,7 +9,7 @@ const Navbar = (props) => {
   if (window.innerWidth < 768) {
     const backdrop = document.body.querySelector('.sidebar-backdrop');
     document.body.classList.add('hideSB');
-    backdrop ? backdrop.remove() : '';
+    backdrop?.remove();
   }
 
   window.addEventListener('resize', handleWindowResize);
