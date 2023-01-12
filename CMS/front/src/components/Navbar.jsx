@@ -6,7 +6,11 @@ const Navbar = (props) => {
     e.target.parentNode.classList.toggle('show');
   };
 
-  if (window.innerWidth < 768) document.body.classList.add('hideSB');
+  if (window.innerWidth < 768) {
+    const backdrop = document.body.querySelector('.sidebar-backdrop');
+    document.body.classList.add('hideSB');
+    backdrop ? backdrop.remove() : '';
+  }
 
   window.addEventListener('resize', handleWindowResize);
 

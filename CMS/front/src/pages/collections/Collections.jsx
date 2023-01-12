@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
 import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
+
 const APIURL = './datas/collections.json';
 
 const Collections = () => {

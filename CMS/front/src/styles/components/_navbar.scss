@@ -51,6 +51,7 @@
       color: rgba(255, 255, 255, 0.6);
       white-space: nowrap;
       transition: background 0.15s ease, color 0.15s ease;
+      cursor: pointer;
       &:hover,
       &.active {
         background: rgba(255, 255, 255, 0.05);
