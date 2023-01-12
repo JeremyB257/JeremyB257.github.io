@@ -60,8 +60,11 @@ const Products = () => {
                 <table className="table">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th width="250px" scope="col">
+                      <th width="40px" scope="col">
+                        #
+                      </th>
+                      <th width="30px"></th>
+                      <th width="300px" scope="col">
                         Titre
                       </th>
                       <th scope="col">Stock</th>
@@ -79,6 +82,9 @@ const Products = () => {
                       data.map((product, index) => (
                         <tr key={product._id}>
                           <th scope="row">{index + 1}</th>
+                          <td>
+                            <img src={product.imageUrl} alt={product.name} />
+                          </td>
                           <td>{product.name}</td>
                           <td>{product.stock}</td>
                           <td>{product.collections}</td>

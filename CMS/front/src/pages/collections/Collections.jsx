@@ -60,8 +60,11 @@ const Collections = () => {
                 <table className="table">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th width="250px" scope="col">
+                      <th width="40px" scope="col">
+                        #
+                      </th>
+                      <th width="30px"></th>
+                      <th width="300px" scope="col">
                         Titre
                       </th>
                       <th scope="col">Produits</th>
@@ -78,6 +81,9 @@ const Collections = () => {
                       data.map((collec, index) => (
                         <tr key={collec._id}>
                           <th scope="row">{index + 1}</th>
+                          <td>
+                            <img src={collec.imageUrl} alt={collec.name} />
+                          </td>
                           <td>{collec.name}</td>
                           <td>{collec.product}</td>
                           <td>
