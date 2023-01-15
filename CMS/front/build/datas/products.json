@@ -1,52 +1,67 @@
 [
   {
     "_id": "107fb5b75607497b96722bda5b504926",
-    "name": "Montre 1",
+    "title": "Montre 1",
     "price": 18.99,
+    "discountPrice": "",
+    "cost": "",
     "stock": "12",
-    "imageUrl": "./img/defaultImg.svg",
+    "imageUrl": ["./img/defaultImg.svg", "./img/defaultImg.svg"],
     "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "altTxt": "Photo d'une montre",
-    "collections": "Montres"
+    "collections": "Montres",
+    "isActif": "true"
   },
   {
     "_id": "107fb5b75607497b96722bda5b504927",
-    "name": "Montre 2",
+    "title": "Montre 2",
     "price": 38.99,
+    "discountPrice": "",
+    "cost": "",
     "stock": "1",
-    "imageUrl": "./img/defaultImg.svg",
+    "imageUrl": ["./img/defaultImg.svg"],
     "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "altTxt": "Photo d'une montre",
-    "collections": "Montres"
+    "collections": "Montres",
+    "isActif": "true"
   },
   {
     "_id": "107fb5b75607497b96722bda5b504928",
-    "name": "Montre 3",
+    "title": "Montre 3",
     "price": 22.99,
+    "discountPrice": "",
+    "cost": "",
     "stock": "22",
-    "imageUrl": "./img/defaultImg.svg",
+    "imageUrl": ["./img/defaultImg.svg", "./img/defaultImg.svg"],
     "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "altTxt": "Photo d'une montre",
-    "collections": "Montres"
+    "collections": "Montres",
+    "isActif": "true"
   },
   {
     "_id": "107fb5b75607497b96722bda5b504929",
-    "name": "bracelet 1",
+    "title": "bracelet 1",
     "price": 11.99,
+    "discountPrice": "",
+    "cost": "",
     "stock": "42",
-    "imageUrl": "./img/defaultImg.svg",
+    "imageUrl": ["./img/defaultImg.svg"],
     "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "altTxt": "Photo d'un bracelet",
-    "collections": "Bracelets"
+    "collections": "Bracelets",
+    "isActif": "true"
   },
   {
     "_id": "107fb5b75607497b96722bda5b504930",
-    "name": "bracelet 2",
+    "title": "bracelet 2",
     "price": 12.99,
+    "discountPrice": "",
+    "cost": "",
     "stock": "52",
-    "imageUrl": "./img/defaultImg.svg",
+    "imageUrl": ["./img/defaultImg.svg"],
     "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "altTxt": "Photo d'un bracelet",
-    "collections": "Bracelets"
+    "collections": "Bracelets",
+    "isActif": "true"
   }
 ]
