@@ -76,16 +76,16 @@ const Products = () => {
                   <tbody>
                     {loading ? (
                       <tr>
-                        <td colSpan={6}>Loading</td>
+                        <td colSpan={7}>Loading</td>
                       </tr>
                     ) : (
                       data.map((product, index) => (
                         <tr key={product._id}>
                           <th scope="row">{index + 1}</th>
                           <td>
-                            <img src={product.imageUrl} alt={product.name} />
+                            <img src={product.imageUrl[0]} alt={product.title} />
                           </td>
-                          <td>{product.name}</td>
+                          <td>{product.title}</td>
                           <td>{product.stock}</td>
                           <td>{product.collections}</td>
                           <td>
