@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles/index.scss';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Products from './pages/products/Products';
 import Collections from './pages/collections/Collections';
@@ -16,7 +16,7 @@ import NotFound from './pages/NotFound';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
@@ -30,6 +30,6 @@ root.render(
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );

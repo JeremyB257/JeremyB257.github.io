@@ -1,5 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../img/logo.svg#full';
+import logoProducts from '../img/ecommerce-price.svg';
+import LogoOrders from '../img/product-shipping.svg';
+import LogoCustomers from '../img/customer.svg';
+import LogoPages from '../img/paper.svg';
 
 const Navbar = () => {
   const showGroup = (e) => {
@@ -26,7 +31,7 @@ const Navbar = () => {
     <nav className="sidebar">
       <div className="sidebar-logo">
         <svg className="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use xlinkHref="../../img/logo.svg#full"></use>
+          <use xlinkHref={logo}></use>
         </svg>
       </div>
       <ul className="sidebar-nav">
@@ -39,7 +44,7 @@ const Navbar = () => {
         <li className="nav-title">Theme</li>
         <li id="productMenu" className="nav-group" onClick={showGroup}>
           <div className="nav-link nav-group-toggle">
-            <img className="nav-icon" src="../../img/ecommerce-price.svg" alt="produit" />
+            <img className="nav-icon" src={logoProducts} alt="produit" />
             &nbsp;Produits
           </div>
           <ul className="nav-group-items">
@@ -57,19 +62,19 @@ const Navbar = () => {
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to="/commandes">
-            <img className="nav-icon" src="../../img/product-shipping.svg" alt="commande" />
+            <img className="nav-icon" src={LogoOrders} alt="commandes" />
             &nbsp;Commandes
           </NavLink>
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to="/clients">
-            <img className="nav-icon" src="../../img/customer.svg" alt="client" />
+            <img className="nav-icon" src={LogoCustomers} alt="clients" />
             &nbsp;Clients
           </NavLink>
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to="/pages">
-            <img className="nav-icon" src="../../img/paper.svg" alt="client" />
+            <img className="nav-icon" src={LogoPages} alt="pages" />
             &nbsp;Pages
           </NavLink>
         </li>
