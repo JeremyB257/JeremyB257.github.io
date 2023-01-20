@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Editor from '../../components/Editor';
 import useFetch from '../../hooks/useFetch';
 
-const APIURL = '../../datas/collections.json';
+const APIURL = './datas/collections.json';
 
 const NewProduct = () => {
   const [editorLoaded, setEditorLoaded] = useState(false);
