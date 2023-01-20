@@ -1,14 +1,19 @@
 {
   "files": {
     "main.css": "/CMS/front/build/static/css/main.f5034c7f.css",
-    "main.js": "/CMS/front/build/static/js/main.2a3a28e3.js",
+    "main.js": "/CMS/front/build/static/js/main.fa9317d2.js",
+    "static/media/logo.svg#full": "/CMS/front/build/static/media/logo.3d35ddfc2aac1d2c7a783dc9bcf0e2ce.svg",
+    "static/media/customer.svg": "/CMS/front/build/static/media/customer.037b54eb048dcd6321c143f1973cc836.svg",
     "index.html": "/CMS/front/build/index.html",
     "static/media/chevron-down.svg": "/CMS/front/build/static/media/chevron-down.e64278b4c607aca5d1fa.svg",
+    "static/media/paper.svg": "/CMS/front/build/static/media/paper.84843efa7aa38b2b08c775cec490d1e9.svg",
+    "static/media/ecommerce-price.svg": "/CMS/front/build/static/media/ecommerce-price.604330618786277946b50cdf0a74612f.svg",
+    "static/media/product-shipping.svg": "/CMS/front/build/static/media/product-shipping.b8b3b31c5bf48b40e8b81170896adb8c.svg",
     "main.f5034c7f.css.map": "/CMS/front/build/static/css/main.f5034c7f.css.map",
-    "main.2a3a28e3.js.map": "/CMS/front/build/static/js/main.2a3a28e3.js.map"
+    "main.fa9317d2.js.map": "/CMS/front/build/static/js/main.fa9317d2.js.map"
   },
   "entrypoints": [
     "static/css/main.f5034c7f.css",
-    "static/js/main.2a3a28e3.js"
+    "static/js/main.fa9317d2.js"
   ]
 }
