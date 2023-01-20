@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../img/logo.svg#full';
+import logo from '../img/logo.svg';
 import logoProducts from '../img/ecommerce-price.svg';
 import LogoOrders from '../img/product-shipping.svg';
 import LogoCustomers from '../img/customer.svg';
@@ -30,9 +30,7 @@ const Navbar = () => {
   return (
     <nav className="sidebar">
       <div className="sidebar-logo">
-        <svg className="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use xlinkHref={logo}></use>
-        </svg>
+        <img className="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo" src={logo} />
       </div>
       <ul className="sidebar-nav">
         <li className="nav-item">
@@ -80,9 +78,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="sidebar-logo">
-        <svg className="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use xlinkHref="../../img/logo.svg#full"></use>
-        </svg>
+        <img className="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo" src={logo} />
       </div>
     </nav>
   );
