@@ -2,7 +2,7 @@ import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
 
-const APIURL = '../../datas/products.json';
+const APIURL = '../datas/products.json';
 
 const Products = () => {
   const { data, loading, error } = useFetch(APIURL);
