@@ -1,21 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../../components/Header';
-import Navbar from '../../components/Navbar';
 import Editor from '../../components/Editor';
+import useFetch from '../../hooks/useFetch';
+
+const APIURL = '../../datas/collections.json';
 
 const NewProduct = () => {
   const [editorLoaded, setEditorLoaded] = useState(false);
   const [info, setInfo] = useState({ isActif: true });
   const [files, setFiles] = useState('');
+  const { data, loading, error } = useFetch(APIURL);
 
   useEffect(() => {
     setEditorLoaded(true);
   }, []);
 
+  const handleFileChange = (e) => {
+    let files = e.target.files;
+    let validFiles = [];
+    for (let i = 0; i < files.length; i++) {
+      if (
+        files[i].size <= 5 * 1024 * 1024 &&
+        (files[i].type === 'image/jpeg' || files[i].type === 'image/png' || files[i].type === 'image/jpg')
+      ) {
+        validFiles.push(files[i]);
+      }
+    }
+    setFiles(validFiles);
+  };
+
   return (
     <>
-      <Navbar productMenu="true" />
-      <Header breadcrumbs={['Theme', 'Produits', 'Les Produits', 'Nouveau Produit']} />
       <main>
         <div className="new-container">
           <div className="left-part">
@@ -66,26 +80,19 @@ const NewProduct = () => {
                       id="file"
                       multiple
                       accept=".jpg,.png,.jpeg"
-                      onChange={(e) => setFiles(e.target.files)}
+                      onChange={handleFileChange}
                       style={{ display: 'none' }}
                     />
 
                     <div className="grid-img">
-                      <label htmlFor="file" className="input-img">
-                        <img src={files.length >= 1 ? URL.createObjectURL(files[0]) : './img/defaultImg.svg'} alt="" />
-                      </label>
-                      <label htmlFor="file" className="input-img">
-                        <img src={files.length >= 2 ? URL.createObjectURL(files[1]) : './img/defaultImg.svg'} alt="" />
-                      </label>
-                      <label htmlFor="file" className="input-img">
-                        <img src={files.length >= 3 ? URL.createObjectURL(files[2]) : './img/defaultImg.svg'} alt="" />
-                      </label>
-                      <label htmlFor="file" className="input-img">
-                        <img src={files.length >= 4 ? URL.createObjectURL(files[3]) : './img/defaultImg.svg'} alt="" />
-                      </label>
-                      <label htmlFor="file" className="input-img">
-                        <img src={files.length >= 5 ? URL.createObjectURL(files[4]) : './img/defaultImg.svg'} alt="" />
-                      </label>
+                      {Array.from({ length: 5 }, (_, i) => (
+                        <label key={i} htmlFor="file" className="input-img">
+                          <img
+                            src={files.length > i ? URL.createObjectURL(files[i]) : '../../img/defaultImg.svg'}
+                            alt=""
+                          />
+                        </label>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -159,14 +166,38 @@ const NewProduct = () => {
                 <strong>Statut du produit</strong>
               </div>
               <div className="card-body">
-                <select
-                  className="form-select"
-                  onChange={(e) => {
-                    setInfo({ ...info, isActif: JSON.parse(e.target.value) });
-                  }}>
-                  <option value={true}>Actif</option>
-                  <option value={false}>Inactif</option>
-                </select>
+                <div className="input">
+                  <label htmlFor="actif" className="form-label">
+                    Actif
+                  </label>
+                  <select
+                    id="actif"
+                    className="form-select"
+                    onChange={(e) => {
+                      setInfo({ ...info, isActif: JSON.parse(e.target.value) });
+                    }}>
+                    <option value={true}>Actif</option>
+                    <option value={false}>Inactif</option>
+                  </select>
+                </div>
+                <div className="input">
+                  <label htmlFor="collection" className="form-label">
+                    Collection
+                  </label>
+                  <select
+                    id="collection"
+                    className="form-select"
+                    onChange={(e) => {
+                      setInfo({ ...info, collection: e.target.value });
+                    }}>
+                    <option value="">Aucune</option>
+                    {data.map((collection) => (
+                      <option key={collection._id} value={collection._id}>
+                        {collection.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
           </div>

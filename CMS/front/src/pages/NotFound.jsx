@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Pages = () => {
+const NotFound = () => {
   return (
     <>
       <main>
-        <h1>Pages</h1>
+        <h1>404 - Not Found</h1>
       </main>
     </>
   );
 };
 
-export default Pages;
+export default NotFound;

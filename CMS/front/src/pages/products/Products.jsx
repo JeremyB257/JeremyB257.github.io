@@ -1,49 +1,18 @@
-import React, { useEffect } from 'react';
-import Header from '../../components/Header';
-import Navbar from '../../components/Navbar';
+import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
-const APIURL = './datas/products.json';
+const APIURL = '../../datas/products.json';
 
 const Products = () => {
   const { data, loading, error } = useFetch(APIURL);
-  const [tabHeader, setTabHeader] = useState({
-    edit: window.innerWidth < 768 ? 'M' : 'Modifier',
-    delete: window.innerWidth < 768 ? 'S' : 'Supprimer',
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth < 768) {
-        setTabHeader({
-          edit: 'M',
-          delete: 'S',
-        });
-      } else {
-        setTabHeader({
-          edit: 'Modifier',
-          delete: 'Supprimer',
-        });
-      }
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  });
 
   return (
     <>
-      <Navbar productMenu="true" />
-      <Header breadcrumbs={['Theme', 'Produits', 'Les Produits']} />
       <main>
         <div className="header">
           <h1>Produits</h1>
-          <Link to="/newproduct">
+          <Link to="/produits/listeProduits/nouveauProduit">
             <button className="btn btn-outline-success" type="button">
               <i className="fa-solid fa-plus"></i>
               &nbsp;Ajouter un produit
@@ -56,7 +25,7 @@ const Products = () => {
           </div>
           <div className="card-body">
             <div className="tab-content">
-              <div className="tab-pane">
+              <div className="tab-pane overflowX">
                 <table className="table">
                   <thead>
                     <tr>
@@ -69,8 +38,8 @@ const Products = () => {
                       </th>
                       <th scope="col">Stock</th>
                       <th scope="col">Collection</th>
-                      <th scope="col">{tabHeader.edit}</th>
-                      <th scope="col">{tabHeader.delete}</th>
+                      <th scope="col">Modifier</th>
+                      <th scope="col">Supprimer</th>
                     </tr>
                   </thead>
                   <tbody>

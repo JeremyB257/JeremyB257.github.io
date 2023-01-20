@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Navbar = (props) => {
+const Navbar = () => {
   const showGroup = (e) => {
     e.target.parentNode.classList.toggle('show');
   };
@@ -24,53 +24,61 @@ const Navbar = (props) => {
 
   return (
     <nav className="sidebar">
-      <div className="sidebar-logo">CMS</div>
+      <div className="sidebar-logo">
+        <svg className="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+          <use xlinkHref="../../img/logo.svg#full"></use>
+        </svg>
+      </div>
       <ul className="sidebar-nav">
         <li className="nav-item">
-          <NavLink className="nav-link" to="/home">
+          <NavLink className="nav-link" to="/">
             <i className="fa-solid fa-gauge-high nav-icon"></i>
             &nbsp;Dashboard
           </NavLink>
         </li>
         <li className="nav-title">Theme</li>
-        <li id="productMenu" className={props?.productMenu ? 'nav-group show' : 'nav-group'} onClick={showGroup}>
+        <li id="productMenu" className="nav-group" onClick={showGroup}>
           <div className="nav-link nav-group-toggle">
-            <img className="nav-icon" src="img/ecommerce-price.svg" alt="produit" />
+            <img className="nav-icon" src="../../img/ecommerce-price.svg" alt="produit" />
             &nbsp;Produits
           </div>
           <ul className="nav-group-items">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/products">
+              <NavLink className="nav-link" to="/produits/listeProduits">
                 <span className="nav-icon"></span> Les produits
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/collections">
+              <NavLink className="nav-link" to="/produits/listeCollections">
                 <span className="nav-icon"></span> Les collections
               </NavLink>
             </li>
           </ul>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/orders">
-            <img className="nav-icon" src="img/product-shipping.svg" alt="commande" />
+          <NavLink className="nav-link" to="/commandes">
+            <img className="nav-icon" src="../../img/product-shipping.svg" alt="commande" />
             &nbsp;Commandes
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/customers">
-            <img className="nav-icon" src="img/customer.svg" alt="client" />
+          <NavLink className="nav-link" to="/clients">
+            <img className="nav-icon" src="../../img/customer.svg" alt="client" />
             &nbsp;Clients
           </NavLink>
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to="/pages">
-            <img className="nav-icon" src="img/paper.svg" alt="client" />
+            <img className="nav-icon" src="../../img/paper.svg" alt="client" />
             &nbsp;Pages
           </NavLink>
         </li>
       </ul>
-      <div className="sidebar-logo">CMS</div>
+      <div className="sidebar-logo">
+        <svg className="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+          <use xlinkHref="../../img/logo.svg#full"></use>
+        </svg>
+      </div>
     </nav>
   );
 };

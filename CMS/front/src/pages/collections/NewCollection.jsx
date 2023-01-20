@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../../components/Header';
-import Navbar from '../../components/Navbar';
 import Editor from '../../components/Editor';
 
 const NewCollection = () => {
@@ -13,8 +11,6 @@ const NewCollection = () => {
 
   return (
     <>
-      <Navbar productMenu="true" />
-      <Header breadcrumbs={['Theme', 'Produits', 'Les Collections', 'Nouvelle Collections']} />
       <main>
         <div className="card">
           <div className="card-header">

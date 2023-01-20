@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = () => {
   const darkMod = () => {
     const darkMode = document.querySelector('.darkMode');
     document.body.classList.toggle('dark');
@@ -22,6 +23,9 @@ const Header = (props) => {
     }
   };
 
+  let location = useLocation();
+  let breadcrumbs = location.pathname.split('/');
+
   return (
     <header>
       <div className="header-container">
@@ -38,10 +42,14 @@ const Header = (props) => {
       <div className="header-container">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
-            {props.breadcrumbs?.map((breadcrumb, index) => {
-              return (
+            {breadcrumbs.map((breadcrumb, index) => {
+              return index > 0 ? (
                 <li key={index} className="breadcrumb-item">
                   {breadcrumb}
+                </li>
+              ) : (
+                <li key={index} className="breadcrumb-item">
+                  Accueil
                 </li>
               );
             })}
