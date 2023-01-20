@@ -87,10 +87,7 @@ const NewProduct = () => {
                     <div className="grid-img">
                       {Array.from({ length: 5 }, (_, i) => (
                         <label key={i} htmlFor="file" className="input-img">
-                          <img
-                            src={files.length > i ? URL.createObjectURL(files[i]) : '../../img/defaultImg.svg'}
-                            alt=""
-                          />
+                          <img src={files.length > i ? URL.createObjectURL(files[i]) : './img/defaultImg.svg'} alt="" />
                         </label>
                       ))}
                     </div>
