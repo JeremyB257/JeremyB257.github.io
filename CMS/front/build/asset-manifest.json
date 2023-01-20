@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CMS/front/build/static/css/main.0c9a16de.css",
-    "main.js": "/CMS/front/build/static/js/main.a8f158c4.js",
+    "main.js": "/CMS/front/build/static/js/main.7497d6bf.js",
     "static/media/logo.svg": "/CMS/front/build/static/media/logo.cb779beec8a46a883aadd70e589fb87b.svg",
     "static/media/customer.svg": "/CMS/front/build/static/media/customer.037b54eb048dcd6321c143f1973cc836.svg",
     "index.html": "/CMS/front/build/index.html",
@@ -10,10 +10,10 @@
     "static/media/ecommerce-price.svg": "/CMS/front/build/static/media/ecommerce-price.604330618786277946b50cdf0a74612f.svg",
     "static/media/product-shipping.svg": "/CMS/front/build/static/media/product-shipping.b8b3b31c5bf48b40e8b81170896adb8c.svg",
     "main.0c9a16de.css.map": "/CMS/front/build/static/css/main.0c9a16de.css.map",
-    "main.a8f158c4.js.map": "/CMS/front/build/static/js/main.a8f158c4.js.map"
+    "main.7497d6bf.js.map": "/CMS/front/build/static/js/main.7497d6bf.js.map"
   },
   "entrypoints": [
     "static/css/main.0c9a16de.css",
-    "static/js/main.a8f158c4.js"
+    "static/js/main.7497d6bf.js"
   ]
 }
